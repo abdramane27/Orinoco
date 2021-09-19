@@ -1,0 +1,16 @@
+{
+  "name": "orinoco",
+  "version": "1.0.0",
+  "description": "Orinoco scss",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass":"sass --watch ./sass/scss/style.scss:./sass/css/style.css"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.39.0"
+  }
+}
