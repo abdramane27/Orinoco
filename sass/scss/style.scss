@@ -85,6 +85,7 @@ header{
             p{ font-size: 0.8em;
                 padding-left: 10px;
                 padding-right: 10px;
+                color: blueviolet;
                 }
                 button{background-color: blueviolet;
                     color: white;
@@ -308,8 +309,7 @@ span{
 
 @media (max-width: 767px){
 
-
-    header{
+   header{
         .logo{
             height: 60px!important;  
         }
@@ -384,11 +384,5 @@ span{
 }   
 
 }
-
-
-
-
-
-
 
 }
