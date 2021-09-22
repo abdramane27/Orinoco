@@ -138,26 +138,26 @@ function smallFull(querySelectorId){
 };
 
 function nameControl(){
-const nameForm = formValues.firstName;
+const nameForm = formValues.lastName;
 if(regExpNameSurnameCity(nameForm)){
 smallVide("smallName")
 return true;
 }else{
     smallFull("smallName")
-    alert("Prénom : les chiffres et les symboles ne sont pas autorisés")
+    alert("Nom : les chiffres et les symboles ne sont pas autorisés")
     return false 
    
 }
 };
 
 function surNameControl(){
-    const surNameForm = formValues.lastName;
+    const surNameForm = formValues.firstName;
     if(regExpNameSurnameCity(surNameForm)){
     smallVide("smallSurname")
     return true;
     }else{
         smallFull("smallSurname")
-        alert("Nom : les chiffres et les symboles ne sont pas autorisés")
+        alert("Prénom : les chiffres et les symboles ne sont pas autorisés")
         return false
         }
     };
@@ -197,16 +197,14 @@ function adresseControl(){
                 return false 
             }
             };
-
+            
 //------Validation des entreés du formulaire----------
-if(nameControl(),surNameControl(),cityControl(),adresseControl(),emailControl()){
+if(nameControl()&& surNameControl()&& cityControl() && adresseControl() &&emailControl()){
 
     //--------Envoie des données formulaire dans le localstorage aprés vérification---------------------
 localStorage.setItem("contact" ,JSON.stringify(formValues));
 localStorage.setItem("prixTotal",JSON.stringify(totalPrice));
-} else{
-    alert("Veuillez bien remplir le formulaire")
-};
+
 let pr =[];
 for (let product of productInTheLocalStorgage){
     pr.push(product.id);
@@ -218,7 +216,8 @@ const catchData = {
     contact : formValues,
 };
 console.log(catchData)
-if(nameControl(),surNameControl(),cityControl(),adresseControl(),emailControl()){
+
+
 //-------------Envoie des données au serveur--------------------
 const sendData = fetch("http://localhost:3000/api/cameras/order",{
 method: "POST",
@@ -227,7 +226,7 @@ headers:{
     "Content-Type": "application/json"
 },
 })
-}
+
 sendData.then(async(response)=>{
 try{
     console.log(response);
@@ -255,8 +254,9 @@ if(response.ok){
     console.log(e)
 }
 })
-
-
+} else{
+    alert("Pour finaliser votre commande, veuillez bien remplir le formulaire.")
+};
 
 
 

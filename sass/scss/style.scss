@@ -43,6 +43,9 @@ header{
     .fas {
         font-size: 16px;
         color: blueviolet;
+        &:hover{
+            color: blue;
+        }
      }
     ul{ display: flex;
         justify-content: space-between; 
@@ -53,7 +56,15 @@ header{
             display: flex;
             flex-direction: column;
             text-align: center;
+            &:hover{
+                color: blue;
             }
+          }
+          a{
+              &:hover{
+            color: blue;
+        }
+    }
         }
     }
 
@@ -85,7 +96,7 @@ header{
             p{ font-size: 0.8em;
                 padding-left: 10px;
                 padding-right: 10px;
-                color: blueviolet;
+                
                 }
                 button{background-color: blueviolet;
                     color: white;

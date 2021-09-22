@@ -59,6 +59,9 @@ header .fas {
   font-size: 16px;
   color: blueviolet;
 }
+header .fas:hover {
+  color: blue;
+}
 header ul {
   display: flex;
   justify-content: space-between;
@@ -71,6 +74,12 @@ header ul li {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+header ul li:hover {
+  color: blue;
+}
+header ul a:hover {
+  color: blue;
 }
 
 h1 {
@@ -106,7 +115,6 @@ h1 {
   font-size: 0.8em;
   padding-left: 10px;
   padding-right: 10px;
-  color: blueviolet;
 }
 .container-products .card button {
   background-color: blueviolet;
